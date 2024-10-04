@@ -1,0 +1,1 @@
+# plugins-affiliatewp-allow-own-referrals
