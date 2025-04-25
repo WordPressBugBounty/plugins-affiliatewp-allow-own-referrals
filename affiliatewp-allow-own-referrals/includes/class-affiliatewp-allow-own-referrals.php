@@ -11,6 +11,8 @@
 
 if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 
+	#[\AllowDynamicProperties]
+
 	/**
 	 * Setup class.
 	 *
@@ -44,10 +46,12 @@ if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 		/**
 		 * The version number.
 		 *
+		 * @since 1.2.1 This is updated automatically in the `self::instance()` method.
+		 *
 		 * @since 1.1
 		 * @var    string
 		 */
-		private $version = '1.2';
+		private $version = '0.0.0';
 
 		/**
 		 * Generates the main bootstrap instance.
@@ -69,6 +73,8 @@ if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 
 			// Setup the singleton.
 			self::setup_instance( $file );
+
+			self::$instance->version = get_plugin_data( self::$instance->file, false, false )['Version'] ?? '';
 
 			self::$instance->setup_constants();
 			self::$instance->hooks();
@@ -116,7 +122,7 @@ if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 		 *
 		 * @return void
 		 */
-		protected function __clone() {
+		public function __clone() {
 			// Cloning instances of the class is forbidden.
 			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh? This object cannot be cloned.', 'affiliatewp-allow-own-referrals' ), '1.1' );
 		}
@@ -128,7 +134,7 @@ if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 		 *
 		 * @return void
 		 */
-		protected function __wakeup() {
+		public function __wakeup() {
 			// Unserializing instances of the class is forbidden
 			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh? This class cannot be unserialized.', 'affiliatewp-allow-own-referrals' ), '1.1' );
 		}
@@ -237,7 +243,31 @@ if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 			}
 
 			return $links;
+		}
 
+		/**
+		 * Set Dynamic Property
+		 *
+		 * @since 1.2.1
+		 *
+		 * @param string $property Name of property.
+		 * @param mixed  $value    The value.
+		 */
+		public function __set( string $property, $value ) : void {
+			$this->$property = $value;
+		}
+
+		/**
+		 * Get Dynamic Property
+		 *
+		 * @since 1.2.1
+		 *
+		 * @param string $property The name of the property.
+		 *
+		 * @return mixed The value of the property, null if none.
+		 */
+		public function __get( string $property ) {
+			return $this->$property ?? null;
 		}
 	}
 }

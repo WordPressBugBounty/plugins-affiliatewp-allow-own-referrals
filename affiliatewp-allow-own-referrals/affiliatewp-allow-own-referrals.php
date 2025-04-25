@@ -3,9 +3,9 @@
  * Plugin Name: AffiliateWP - Allow Own Referrals
  * Plugin URI: https://affiliatewp.com/add-ons/official-free/allow-own-referrals/
  * Description: Allows an affiliate to earn commission on their own referrals
- * Author: Sandhills Development, LLC
- * Author URI: https://sandhillsdev.com
- * Version: 1.2
+ * Author: AffiliateWP
+ * Author URI: https://affiliatewp.com
+ * Version: 1.2.1
  * Text Domain: affiliatewp-allow-own-referrals
  *
  * AffiliateWP is distributed under the terms of the GNU General Public License as published by
@@ -20,12 +20,11 @@
  * You should have received a copy of the GNU General Public License
  * along with AffiliateWP. If not, see <http://www.gnu.org/licenses/>.
  *
- * @package AffiliateWP Allow Own Referrals
+ * @package AffiliateWP - Allow Own Referrals
  * @category Core
- * @version 1.2
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -33,6 +32,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'AffiliateWP_Requirements_Check_v1_1' ) ) {
 	require_once dirname( __FILE__ ) . '/includes/lib/affwp/class-affiliatewp-requirements-check-v1-1.php';
 }
+
+#[\AllowDynamicProperties]
 
 /**
  * Class used to check requirements for and bootstrap the plugin.
@@ -165,6 +166,30 @@ class AffiliateWP_AOR_Requirements_Check extends AffiliateWP_Requirements_Check_
 		return 'https://docs.affiliatewp.com/article/2361-minimum-requirements-roadmaps';
 	}
 
+	/**
+	 * Set Dynamic Property
+	 *
+	 * @since 1.2.1
+	 *
+	 * @param string $property Name of property.
+	 * @param mixed  $value    The value.
+	 */
+	public function __set( string $property, $value ) : void {
+		$this->$property = $value;
+	}
+
+	/**
+	 * Get Dynamic Property
+	 *
+	 * @since 1.2.1
+	 *
+	 * @param string $property The name of the property.
+	 *
+	 * @return mixed The value of the property, null if none.
+	 */
+	public function __get( string $property ) {
+		return $this->$property ?? null;
+	}
 }
 
 $requirements = new AffiliateWP_AOR_Requirements_Check( __FILE__ );

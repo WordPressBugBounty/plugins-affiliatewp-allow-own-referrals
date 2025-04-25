@@ -1,10 +1,10 @@
 === AffiliateWP - Allow Own Referrals ===
-Contributors: sumobi, mordauk
+Contributors: sumobi, mordauk, aubreypwd
 Tags: AffiliateWP, affiliate, Pippin Williamson, Andrew Munro, mordauk, pippinsplugins, sumobi, ecommerce, e-commerce, e commerce, selling, referrals, affiliate marketing
 Requires at least: 5.2
-Tested up to: 6.0
-Requires PHP: 5.6
-Stable tag: 1.2
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ The standard behaviour of AffiliateWP is to prevent affiliates from earning a co
 OR you can just install it with WordPress by going to Plugins &rarr; Add New &rarr; and type this plugin's name.
 
 == Changelog ==
+
+= 1.2.1 =
+* Improved: Compatibility with PHP 8
 
 = 1.2 =
 * New: Requires WordPress 5.2 minimum
