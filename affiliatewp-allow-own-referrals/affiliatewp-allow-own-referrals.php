@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: AffiliateWP - Allow Own Referrals
- * Plugin URI: https://affiliatewp.com/add-ons/official-free/allow-own-referrals/
+ * Plugin URI: https://affiliatewp.com/addons/allow-own-referrals/
  * Description: Allows an affiliate to earn commission on their own referrals
  * Author: AffiliateWP
  * Author URI: https://affiliatewp.com
@@ -163,7 +163,7 @@ class AffiliateWP_AOR_Requirements_Check extends AffiliateWP_Requirements_Check_
 	 * @return string Unmet requirements URL.
 	 */
 	protected function unmet_requirements_url() {
-		return 'https://docs.affiliatewp.com/article/2361-minimum-requirements-roadmaps';
+		return 'https://affiliatewp.com/docs/minimum-requirements-roadmap/';
 	}
 
 	/**

@@ -1,6 +1,6 @@
 === AffiliateWP - Allow Own Referrals ===
-Contributors: sumobi, mordauk, aubreypwd
-Tags: AffiliateWP, affiliate, Pippin Williamson, Andrew Munro, mordauk, pippinsplugins, sumobi, ecommerce, e-commerce, e commerce, selling, referrals, affiliate marketing
+Contributors: sumobi, aubreypwd
+Tags: affiliatewp, own referrals, self referral, own commission, affiliate purchase
 Requires at least: 5.2
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -34,10 +34,10 @@ OR you can just install it with WordPress by going to Plugins &rarr; Add New &ra
 = 1.2.1 =
 * Improved: Compatibility with PHP 8
 
-= 1.2 =
+= 1.2.0 =
 * New: Requires WordPress 5.2 minimum
 
-= 1.1 =
+= 1.1.0 =
 * New: Enforce minimum dependency requirements checking
 * New: Requires PHP 5.6 minimum
 * New: Requires WordPress 5.0 minimum
@@ -52,5 +52,5 @@ OR you can just install it with WordPress by going to Plugins &rarr; Add New &ra
 
 * Fix: Affiliates who are logged into WordPress can now earn a commission on their own purchases
 
-= 1.0 =
+= 1.0.0 =
 * Initial release

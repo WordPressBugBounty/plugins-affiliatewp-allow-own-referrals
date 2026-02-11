@@ -225,23 +225,13 @@ if ( ! class_exists( 'AffiliateWP_Allow_Own_Referrals' ) ) {
 		 * Modifies the plugin list table meta links.
 		 *
 		 * @since 1.1
+		 * @since 1.2.1 Removed Get more add-ons link.
 		 *
 		 * @param array  $links The current links array.
 		 * @param string $file  A specific plugin table entry.
 		 * @return array The modified links array.
 		 */
 		public function plugin_meta( $links, $file ) {
-
-			if ( $file == plugin_basename( $this->file ) ) {
-
-				$label = __( 'More add-ons', 'affiliatewp-allow-own-referrals' );
-				$atts  = array( 'title' => __( 'Get more add-ons for AffiliateWP', 'affiliatewp-allow-own-referrals' ) );
-
-				$plugins_link = affwp_admin_link( 'add-ons', $label, array(), $atts );
-
-				$links = array_merge( $links, array( $plugins_link ) );
-			}
-
 			return $links;
 		}
 
